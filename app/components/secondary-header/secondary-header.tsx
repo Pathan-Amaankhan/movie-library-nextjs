@@ -5,7 +5,7 @@ const SecondaryHeader = () => {
 	return (
 		<div className='bg-black py-2 px-6'>
 			<div className='uppercase flex justify-center items-center gap-11'>
-				<Link href='/'>Movies</Link>
+				<Link href='/movies'>Movies</Link>
 				<Link href='/'>TV Shows</Link>
 				<Link href='/'>Events</Link>
 				<Link href='/'>Theatre</Link>

@@ -1,11 +1,9 @@
 import type { Metadata } from 'next'
-import { Heebo } from 'next/font/google'
 import './globals.css'
 import PrimaryHeader from "@/app/components/primary-header/primary-header";
 import SiteFooter from "@/app/components/footer/footer";
 import SecondaryHeader from "@/app/components/secondary-header/secondary-header";
-
-const roboto = Heebo( { subsets: [ "latin" ], weight: "400" } );
+import {bigShouldersDisplay, heebo} from "@/app/fonts/fonts";
 
 export const metadata: Metadata = {
   title: 'Movie Library',
@@ -19,10 +17,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" data-theme="business">
-      <body className={roboto.className}>
+      <body className={`${heebo.variable} ${bigShouldersDisplay.variable}`}>
         <PrimaryHeader />
         <SecondaryHeader />
-        <main className='max-w-[1200px] mx-auto py-8 px-6'>
+        <main className='py-8 px-6'>
           {children}
         </main>
         <SiteFooter />

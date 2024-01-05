@@ -15,20 +15,44 @@ body {
   line-height: 32px; /* 200% */
 }
 
-h1 {
-  font-size: 88px;
-  font-weight: 600;
-  line-height: 96px; /* 109.091% */
+.pagination-btn {
+  @apply border w-10 h-10 rounded-full flex justify-center items-center;
 }
 
-h2 {
-  font-size: 64px;
-  font-weight: 600;
-  line-height: 72px; /* 112.5% */
+.pagination-btn.active {
+  @apply bg-[#2A2A2A] text-[#E46D62] !border-0;
 }
 
-h4 {
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 32px; /* 200% */
+@layer base {
+  h1 {
+    font-size: 88px;
+    font-weight: 600;
+    line-height: 96px; /* 109.091% */
+  }
+
+  h2 {
+    font-size: 64px;
+    font-weight: 600;
+    line-height: 72px; /* 112.5% */
+    font-family: var(--font-big-shoulders-display);
+  }
+
+  h3 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 40px; /* 125% */
+    font-family: var(--font-big-shoulders-display);
+  }
+
+  h4 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px; /* 133.333% */
+  }
+
+  h5 {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 32px; /* 200% */
+  }
 }

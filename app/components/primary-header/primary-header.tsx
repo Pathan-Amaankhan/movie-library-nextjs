@@ -1,6 +1,6 @@
 import Image from "next/image";
-import SiteLogo from "@/app/assets/site-logo-black.svg";
-import SearchIcon from "@/app/assets/search.svg";
+import SiteLogo from "@/public/assets/logos/site-logo-black.svg";
+import SearchIcon from "@/public/assets/icons/search.svg";
 import Link from "next/link";
 
 const PrimaryHeader = () => {

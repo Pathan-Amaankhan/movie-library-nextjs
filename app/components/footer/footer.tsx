@@ -1,10 +1,11 @@
-import SiteLogo from "@/app/assets/site-logo-gray.svg";
-import FacebookLogo from "@/app/assets/facebook.svg";
-import TwitterLogo from "@/app/assets/twitter.svg";
-import YouTubeLogo from "@/app/assets/youtube.svg";
-import InstagramLogo from "@/app/assets/instagram.svg";
-import RSSLogo from "@/app/assets/rss.svg";
+import SiteLogo from "@/public/assets/logos/site-logo-gray.svg";
+import FacebookLogo from "@/public/assets/icons/facebook.svg";
+import TwitterLogo from "@/public/assets/icons/twitter.svg";
+import YouTubeLogo from "@/public/assets/icons/youtube.svg";
+import InstagramLogo from "@/public/assets/icons/instagram.svg";
+import RSSLogo from "@/public/assets/icons/rss.svg";
 import Image from "next/image";
+import Link from "next/link";
 
 const SiteFooter = () => {
 	return (
@@ -36,7 +37,9 @@ const SiteFooter = () => {
 
 					<div className='w-[25%]'>
 						<h4 className='uppercase mb-6'>Explore</h4>
-						<div className='mb-2'>Movies</div>
+						<div className='mb-2'>
+							<Link href='/movies'>Movies</Link>
+						</div>
 						<div className='mb-2'>TV Shows</div>
 						<div className='mb-2'>Events</div>
 						<div className='mb-2'>Theatre</div>
