@@ -27,7 +27,7 @@ const SiteFooter = () => {
 					</div>
 
 					<div className='w-[25%]'>
-						<h4 className='uppercase mb-6'>Company</h4>
+						<div className='uppercase mb-6 font-bold'>Company</div>
 						<div className='mb-2'>About us</div>
 						<div className='mb-2'>Team</div>
 						<div className='mb-2'>Careers</div>
@@ -36,7 +36,7 @@ const SiteFooter = () => {
 					</div>
 
 					<div className='w-[25%]'>
-						<h4 className='uppercase mb-6'>Explore</h4>
+						<div className='uppercase mb-6 font-bold'>Explore</div>
 						<div className='mb-2'>
 							<Link href='/movies'>Movies</Link>
 						</div>

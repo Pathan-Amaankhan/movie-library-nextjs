@@ -1,12 +1,11 @@
 import React from 'react';
-import Link from "next/link";
-import MoviesArchivePage from "@/app/movies/page";
 import Movie from "@/app/components/movie";
+import LoadMore from "@/app/movies/[id]/cast-and-crew/LoadMore";
 import {getMovies} from "@/app/movies/utils";
 
 interface Props {
 	params: {
-		id: string
+		id: string,
 	}
 }
 
@@ -18,16 +17,20 @@ interface Props {
 // 	} ) );
 // }
 
-const SingleMoviePage = ( { params }: Props ) => {
-
+const CastAndCrewPage = ( { params }: Props ) => {
 	const id = parseInt( params.id );
 
+	const castAndCrew = {}
+
 	return (
-		<section>
-			Single Movie Page.
-			<Link href={ `/movies/${id}/cast-and-crew` }>See Cast & Crew</Link>
+		<section className='max-w-[1200px] mx-auto my-20'>
+
+			<h2 className='border-l-4 border-[#D13223] pl-3 mb-12'>Cast & Crew</h2>
+
+			<LoadMore castAndCrew = { castAndCrew } />
+
 		</section>
 	);
 };
 
-export default SingleMoviePage;
+export default CastAndCrewPage;
