@@ -11,12 +11,11 @@ interface Props {
 }
 
 // Return a list of `params` to populate the [id] dynamic segment
-// export async function generateStaticParams() {
-//
-// 	return getMovies().map( ( movie ) => ( {
-// 		id: movie.id.toString(),
-// 	} ) );
-// }
+export async function generateStaticParams() {
+	return getMovies().map( ( movie ) => ( {
+		id: movie.id.toString(),
+	} ) );
+}
 
 const SingleMoviePage = ( { params }: Props ) => {
 
