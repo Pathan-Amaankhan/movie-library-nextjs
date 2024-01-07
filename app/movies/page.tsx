@@ -1,5 +1,5 @@
 import React from 'react';
-import Movie from "@/app/components/movie";
+import Movie from "@/app/components/movies/movie";
 import {getMovies} from "@/app/movies/utils";
 
 const MoviesArchivePage = () => {

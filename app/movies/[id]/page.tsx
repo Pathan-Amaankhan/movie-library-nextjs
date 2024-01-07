@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from "next/link";
 import MoviesArchivePage from "@/app/movies/page";
-import Movie from "@/app/components/movie";
+import Movie from "@/app/components/movies/movie";
 import {getMovies} from "@/app/movies/utils";
 
 interface Props {

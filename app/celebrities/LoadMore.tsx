@@ -4,17 +4,17 @@ import Celebrity from "@/app/components/celebrities/celebrity";
 import CelebrityData from "@/app/components/celebrities/interface";
 
 interface Props {
-	castAndCrew: Array<CelebrityData>
+	celebrities: Array<CelebrityData>
 }
 
-const LoadMore = ( { castAndCrew }: Props ) => {
+const LoadMore = ( { celebrities }: Props ) => {
 
-	const castAndCrewListRef = useRef<HTMLInputElement>( null );
+	const celebritiesRef = useRef<HTMLInputElement>( null );
 
 	return (
 		<>
-			<div ref={castAndCrewListRef} className='grid grid-cols-2 gap-6 mb-14'>
-				{ castAndCrew.map( ( data: CelebrityData ) => <Celebrity key={ data.id } data={ data } /> ) }
+			<div ref={celebritiesRef} className='grid grid-cols-2 gap-6 mb-14'>
+				{ celebrities.map( ( data: CelebrityData ) => <Celebrity key={ data.id } data={ data } /> ) }
 			</div>
 
 			<div className='flex justify-center items-center'>

@@ -9,7 +9,7 @@ const SecondaryHeader = () => {
 				<Link href='/'>TV Shows</Link>
 				<Link href='/'>Events</Link>
 				<Link href='/'>Theatre</Link>
-				<Link href='/'>Celebrities</Link>
+				<Link href='/celebrities'>Celebrities</Link>
 			</div>
 		</div>
 	);

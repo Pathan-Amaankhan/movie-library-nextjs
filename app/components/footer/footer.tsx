@@ -43,7 +43,9 @@ const SiteFooter = () => {
 						<div className='mb-2'>TV Shows</div>
 						<div className='mb-2'>Events</div>
 						<div className='mb-2'>Theatre</div>
-						<div className='mb-2'>Celebrities</div>
+						<div className='mb-2'>
+							<Link href='/celebrities'>Celebrities</Link>
+						</div>
 					</div>
 				</div>
 

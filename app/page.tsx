@@ -1,7 +1,7 @@
 import Image from "next/image";
 import SpiderFarFromHomeMovieImage from "@/public/assets/images/spider-far-from-home.png";
 import JokerMovieImage from "@/public/assets/images/joker.png";
-import Movie from "@/app/components/movie";
+import Movie from "@/app/components/movies/movie";
 
 export default function Home() {
 
@@ -10,6 +10,7 @@ export default function Home() {
             'id': 1,
             'image': SpiderFarFromHomeMovieImage,
             'name': 'Spiderman: Far From Home',
+            'alt': 'spiderman-far-from-home',
             'genre': 'Action',
             'releaseDate': '12 Dec 2022',
             'pg': 'pg-13',
@@ -18,6 +19,7 @@ export default function Home() {
             'id': 2,
             'image': JokerMovieImage,
             'name': 'Joker',
+            'alt': 'joker',
             'genre': 'Action',
             'releaseDate': '12 Dec 2022',
             'pg': 'pg-13',
@@ -26,6 +28,7 @@ export default function Home() {
             'id': 3,
             'image': SpiderFarFromHomeMovieImage,
             'name': 'Spiderman: Far From Home',
+            'alt': 'spiderman-far-from-home',
             'genre': 'Crime',
             'releaseDate': '12 Dec 2022',
             'pg': 'pg-13',
@@ -34,6 +37,7 @@ export default function Home() {
             'id': 4,
             'image': SpiderFarFromHomeMovieImage,
             'name': 'Spiderman: Far From Home',
+            'alt': 'spiderman-far-from-home',
             'genre': 'Action',
             'releaseDate': '12 Dec 2022',
             'pg': 'pg-13',
@@ -42,6 +46,7 @@ export default function Home() {
             'id': 5,
             'image': SpiderFarFromHomeMovieImage,
             'name': 'Spiderman: Far From Home',
+            'alt': 'spiderman-far-from-home',
             'genre': 'Action',
             'releaseDate': '12 Dec 2022',
             'pg': 'pg-13',
@@ -53,6 +58,7 @@ export default function Home() {
             'id': 1,
             'image': SpiderFarFromHomeMovieImage,
             'name': 'Spiderman: Far From Home',
+            'alt': 'spiderman-far-from-home',
             'genre': 'Action',
             'releaseDate': '12 Dec 2022',
             'pg': 'pg-13',
@@ -61,6 +67,7 @@ export default function Home() {
             'id': 2,
             'image': SpiderFarFromHomeMovieImage,
             'name': 'Spiderman: Far From Home',
+            'alt': 'spiderman-far-from-home',
             'genre': 'Action',
             'releaseDate': '12 Dec 2022',
             'pg': 'pg-13',
@@ -69,6 +76,7 @@ export default function Home() {
             'id': 3,
             'image': SpiderFarFromHomeMovieImage,
             'name': 'Spiderman: Far From Home',
+            'alt': 'spiderman-far-from-home',
             'genre': 'Action',
             'releaseDate': '12 Dec 2022',
             'pg': 'pg-13',
@@ -77,6 +85,7 @@ export default function Home() {
             'id': 4,
             'image': SpiderFarFromHomeMovieImage,
             'name': 'Spiderman: Far From Home',
+            'alt': 'spiderman-far-from-home',
             'genre': 'Action',
             'releaseDate': '12 Dec 2022',
             'pg': 'pg-13',
@@ -85,6 +94,7 @@ export default function Home() {
             'id': 5,
             'image': SpiderFarFromHomeMovieImage,
             'name': 'Spiderman: Far From Home',
+            'alt': 'spiderman-far-from-home',
             'genre': 'Action',
             'releaseDate': '12 Dec 2022',
             'pg': 'pg-13',
@@ -93,6 +103,7 @@ export default function Home() {
             'id': 6,
             'image': SpiderFarFromHomeMovieImage,
             'name': 'Spiderman: Far From Home',
+            'alt': 'spiderman-far-from-home',
             'genre': 'Action',
             'releaseDate': '12 Dec 2022',
             'pg': 'pg-13',
