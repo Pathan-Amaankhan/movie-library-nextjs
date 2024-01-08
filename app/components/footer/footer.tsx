@@ -18,11 +18,11 @@ const SiteFooter = () => {
 						<div className='uppercase mb-4'>Follow us</div>
 
 						<div className='flex gap-4'>
-							<Image src={FacebookLogo} className='w-[50px] h-[50px]' alt='facebook'/>
-							<Image src={TwitterLogo} className='w-[50px] h-[50px]' alt='twitter'/>
-							<Image src={YouTubeLogo} className='w-[50px] h-[50px]' alt='youtube'/>
-							<Image src={InstagramLogo} className='w-[50px] h-[50px]' alt='instagram'/>
-							<Image src={RSSLogo} className='w-[50px] h-[50px]' alt='rss'/>
+							<Image src={FacebookLogo} width={ 50 } height={ 50 } className='w-[50px] h-[50px]' alt='facebook'/>
+							<Image src={TwitterLogo} width={ 50 } height={ 50 } className='w-[50px] h-[50px]' alt='twitter'/>
+							<Image src={YouTubeLogo} width={ 50 } height={ 50 } className='w-[50px] h-[50px]' alt='youtube'/>
+							<Image src={InstagramLogo} width={ 50 } height={ 50 } className='w-[50px] h-[50px]' alt='instagram'/>
+							<Image src={RSSLogo} width={ 50 } height={ 50 } className='w-[50px] h-[50px]' alt='rss'/>
 						</div>
 					</div>
 

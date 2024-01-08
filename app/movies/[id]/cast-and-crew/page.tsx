@@ -31,7 +31,7 @@ const CastAndCrewPage = ( { params }: Props ) => {
 			'about': 'Robert Downey Jr. has evolved into one of the most respected actors in Hollywood. With an amazing...',
 		},
 		{
-			'id': 1,
+			'id': 2,
 			'image': ChrisEvans,
 			'alt': 'chris-evans',
 			'name': 'Chris Evans',

@@ -1,117 +1,15 @@
-import Image from "next/image";
-import SpiderFarFromHomeMovieImage from "@/public/assets/images/spider-far-from-home.png";
-import JokerMovieImage from "@/public/assets/images/joker.png";
 import Movie from "@/app/components/movies/movie";
+import {getMovies} from "@/app/movies/utils";
+import MovieData from "@/app/components/movies/interface";
 
 export default function Home() {
 
-    const upcomingMovies = [
-        {
-            'id': 1,
-            'image': SpiderFarFromHomeMovieImage,
-            'name': 'Spiderman: Far From Home',
-            'alt': 'spiderman-far-from-home',
-            'genre': 'Action',
-            'releaseDate': '12 Dec 2022',
-            'pg': 'pg-13',
-        },
-        {
-            'id': 2,
-            'image': JokerMovieImage,
-            'name': 'Joker',
-            'alt': 'joker',
-            'genre': 'Action',
-            'releaseDate': '12 Dec 2022',
-            'pg': 'pg-13',
-        },
-        {
-            'id': 3,
-            'image': SpiderFarFromHomeMovieImage,
-            'name': 'Spiderman: Far From Home',
-            'alt': 'spiderman-far-from-home',
-            'genre': 'Crime',
-            'releaseDate': '12 Dec 2022',
-            'pg': 'pg-13',
-        },
-        {
-            'id': 4,
-            'image': SpiderFarFromHomeMovieImage,
-            'name': 'Spiderman: Far From Home',
-            'alt': 'spiderman-far-from-home',
-            'genre': 'Action',
-            'releaseDate': '12 Dec 2022',
-            'pg': 'pg-13',
-        },
-        {
-            'id': 5,
-            'image': SpiderFarFromHomeMovieImage,
-            'name': 'Spiderman: Far From Home',
-            'alt': 'spiderman-far-from-home',
-            'genre': 'Action',
-            'releaseDate': '12 Dec 2022',
-            'pg': 'pg-13',
-        },
-    ];
+    const upcomingMovies: Array<MovieData> = getMovies().filter( ( movie: MovieData ) => movie.isUpcomingMovie );
 
-    const trendingMovies = [
-        {
-            'id': 1,
-            'image': SpiderFarFromHomeMovieImage,
-            'name': 'Spiderman: Far From Home',
-            'alt': 'spiderman-far-from-home',
-            'genre': 'Action',
-            'releaseDate': '12 Dec 2022',
-            'pg': 'pg-13',
-        },
-        {
-            'id': 2,
-            'image': SpiderFarFromHomeMovieImage,
-            'name': 'Spiderman: Far From Home',
-            'alt': 'spiderman-far-from-home',
-            'genre': 'Action',
-            'releaseDate': '12 Dec 2022',
-            'pg': 'pg-13',
-        },
-        {
-            'id': 3,
-            'image': SpiderFarFromHomeMovieImage,
-            'name': 'Spiderman: Far From Home',
-            'alt': 'spiderman-far-from-home',
-            'genre': 'Action',
-            'releaseDate': '12 Dec 2022',
-            'pg': 'pg-13',
-        },
-        {
-            'id': 4,
-            'image': SpiderFarFromHomeMovieImage,
-            'name': 'Spiderman: Far From Home',
-            'alt': 'spiderman-far-from-home',
-            'genre': 'Action',
-            'releaseDate': '12 Dec 2022',
-            'pg': 'pg-13',
-        },
-        {
-            'id': 5,
-            'image': SpiderFarFromHomeMovieImage,
-            'name': 'Spiderman: Far From Home',
-            'alt': 'spiderman-far-from-home',
-            'genre': 'Action',
-            'releaseDate': '12 Dec 2022',
-            'pg': 'pg-13',
-        },
-        {
-            'id': 6,
-            'image': SpiderFarFromHomeMovieImage,
-            'name': 'Spiderman: Far From Home',
-            'alt': 'spiderman-far-from-home',
-            'genre': 'Action',
-            'releaseDate': '12 Dec 2022',
-            'pg': 'pg-13',
-        },
-    ];
+    const trendingMovies: Array<MovieData> = getMovies().filter( ( movie: MovieData ) => movie.isTrendingMovie );
 
     return (
-      <section className='max-w-[1200px] mx-auto'>
+      <section className='max-w-[1200px] mx-auto my-[120px]'>
           <div className='mb-[120px]'>
               <h3 className='mb-12 border-l-4 border-[#D13223] pl-3'>Upcoming Movies</h3>
 
@@ -120,7 +18,7 @@ export default function Home() {
               </div>
           </div>
 
-          <div className='mb-[120px]'>
+          <div>
               <h3 className='mb-12 border-l-4 border-[#D13223] pl-3'>Trending Now</h3>
 
               <div className='grid grid-cols-3 gap-6'>

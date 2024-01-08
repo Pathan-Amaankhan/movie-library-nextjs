@@ -20,7 +20,7 @@ export default function RootLayout({
       <body className={`${heebo.variable} ${bigShouldersDisplay.variable}`}>
         <PrimaryHeader />
         <SecondaryHeader />
-        <main className='py-8 px-6'>
+        <main className='px-6'>
           {children}
         </main>
         <SiteFooter />

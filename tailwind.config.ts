@@ -15,6 +15,10 @@ const config: Config = {
       },
       gridTemplateRows: {
         '480-auto': '480px auto',
+        '250-auto': '250px auto',
+      },
+      gridTemplateColumns: {
+        'auto-fill-378': 'repeat(auto-fill, 378px)',
       },
     },
   },

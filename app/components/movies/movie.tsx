@@ -1,27 +1,17 @@
 import React from 'react';
 import Image from "next/image";
 import Link from "next/link";
-
-interface Movie {
-	id: number,
-	image: string | import( 'next/dist/shared/lib/get-img-props' ).StaticImport,
-	alt: string|undefined,
-	name: string,
-	genre: string,
-	releaseDate: string,
-	pg: string,
-}
+import MovieData from "@/app/components/movies/interface";
 
 interface Props {
-	movie: Movie,
-	key: number
+	movie: MovieData,
 }
 
-const Movie = ( { movie, key }: Props ) => {
+const Movie = ( { movie }: Props ) => {
 	return (
-		<div className='w-96 bg-[#2A2A2A] grid grid-rows-480' key={ key }>
-			<Link href={`/movies/${movie.id.toString()}`}>
-				<Image src={movie.image} alt={movie.alt ?? ''} height={420} width={384}/>
+		<Link href={`/movies/${movie.id.toString()}`}>
+			<div className='w-96 bg-[#2A2A2A] grid grid-rows-480-auto h-full'>
+				<Image src={movie.image} alt={movie.alt ?? ''} height={420} width={384} />
 				<div className='px-4 py-6 flex flex-col justify-between'>
 					<div className='flex mb-4 justify-between items-start'>
 						<h4 className='w-60'>{movie.name}</h4>
@@ -32,8 +22,8 @@ const Movie = ( { movie, key }: Props ) => {
 						<span>{movie.pg}</span>
 					</div>
 				</div>
-			</Link>
-		</div>
+			</div>
+		</Link>
 	);
 };
 
