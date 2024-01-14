@@ -10,7 +10,7 @@ const MoviesArchivePage = () => {
 
 			<h2 className='border-l-4 border-[#D13223] pl-3 mb-12'>Movies</h2>
 
-			<div className='grid grid-cols-3 gap-6 mb-16'>
+			<div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-16'>
 				{ getMovies().map( ( movie: MovieData ) => <Movie movie={ movie } key={ movie.id } /> ) }
 			</div>
 
