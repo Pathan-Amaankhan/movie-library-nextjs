@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from "next/link";
-import {getMovies} from "@/app/movies/utils";
 import MovieData from "@/app/components/movies/interface";
 import {notFound} from "next/navigation";
 import Image from "next/image";
@@ -12,6 +11,7 @@ import ArrowRightWhite from "@/public/assets/icons/arrow-right-white.svg";
 import AvengerEndGameImage1 from "@/public/assets/images/avenger-end-game-image-1.png";
 import YoutubeVideoPlayer from "@/app/components/misc/youtube-video-player";
 import ProfileIcon from "@/public/assets/icons/profile-icon.png";
+import {getMovieData} from "@/app/movies/utils";
 
 interface Props {
 	params: {
@@ -26,11 +26,11 @@ export async function generateStaticParams() {
 	} ) );
 }
 
-const SingleMoviePage = ( { params }: Props ) => {
+const SingleMoviePage = async ( { params }: Props ) => {
 
 	const id = parseInt( params.id );
 
-	const movieData: MovieData|undefined = getMovies().find( ( movie: MovieData ) => movie.id === id );
+	const movieData: MovieData|false = await getMovieData( id );
 
 	if ( ! movieData ) {
 		notFound();

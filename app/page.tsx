@@ -1,12 +1,16 @@
 import Movie from "@/app/components/movies/movie";
-import {getMovies} from "@/app/movies/utils";
+import {getMoviesData} from "@/app/movies/utils";
 import MovieData from "@/app/components/movies/interface";
 
-export default function Home() {
+export default async function Home() {
 
-    const upcomingMovies: Array<MovieData> = getMovies().filter( ( movie: MovieData ) => movie.isUpcomingMovie );
+    const upcomingMoviesData = await getMoviesData( 6, null, null, null, 'upcoming' );
 
-    const trendingMovies: Array<MovieData> = getMovies().filter( ( movie: MovieData ) => movie.isTrendingMovie );
+    const upcomingMovies: Array<MovieData> = upcomingMoviesData.movies;
+
+    const trendingMoviesData = await getMoviesData( 6, null, null, null, 'trending' );
+
+    const trendingMovies: Array<MovieData> = trendingMoviesData.movies;
 
     return (
       <section className='max-w-[1200px] mx-auto my-[120px]'>

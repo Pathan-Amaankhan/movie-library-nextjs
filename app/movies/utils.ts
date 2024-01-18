@@ -1,150 +1,48 @@
-import SpiderFarFromHomeMovieImage from "@/public/assets/images/spider-far-from-home.png";
-import JokerMovieImage from "@/public/assets/images/joker.png";
 
-export const getMovies = () => {
-	return [
-		{
-			'id': 1,
-			'image': SpiderFarFromHomeMovieImage,
-			'name': 'Spiderman: Far From Home',
-			'alt': 'spiderman-far-from-home',
-			'genre': 'Action',
-			'releaseDate': '12 Dec 2022',
-			'pg': 'PG-13',
-			'isUpcomingMovie': true,
-			'isTrendingMovie': true,
-		},
-		{
-			'id': 2,
-			'image': JokerMovieImage,
-			'name': 'Joker',
-			'alt': 'joker',
-			'genre': 'Action',
-			'releaseDate': '12 Dec 2022',
-			'pg': 'PG-13',
-			'isUpcomingMovie': true,
-			'isTrendingMovie': false,
-		},
-		{
-			'id': 3,
-			'image': SpiderFarFromHomeMovieImage,
-			'name': 'Spiderman: Far From Home',
-			'alt': 'spiderman-far-from-home',
-			'genre': 'Action',
-			'releaseDate': '12 Dec 2022',
-			'pg': 'PG-13',
-			'isUpcomingMovie': false,
-			'isTrendingMovie': true,
-		},
-		{
-			'id': 4,
-			'image': SpiderFarFromHomeMovieImage,
-			'name': 'Spiderman: Far From Home',
-			'alt': 'spiderman-far-from-home',
-			'genre': 'Action',
-			'releaseDate': '12 Dec 2022',
-			'pg': 'PG-13',
-			'isUpcomingMovie': false,
-			'isTrendingMovie': false,
-		},
-		{
-			'id': 5,
-			'image': SpiderFarFromHomeMovieImage,
-			'name': 'Spiderman: Far From Home',
-			'alt': 'spiderman-far-from-home',
-			'genre': 'Action',
-			'releaseDate': '12 Dec 2022',
-			'pg': 'PG-13',
-			'isUpcomingMovie': true,
-			'isTrendingMovie': false,
-		},
-		{
-			'id': 6,
-			'image': SpiderFarFromHomeMovieImage,
-			'name': 'Spiderman: Far From Home',
-			'alt': 'spiderman-far-from-home',
-			'genre': 'Action',
-			'releaseDate': '12 Dec 2022',
-			'pg': 'PG-13',
-			'isUpcomingMovie': true,
-			'isTrendingMovie': false,
-		},
-		{
-			'id': 7,
-			'image': SpiderFarFromHomeMovieImage,
-			'name': 'Spiderman: Far From Home',
-			'alt': 'spiderman-far-from-home',
-			'genre': 'Action',
-			'releaseDate': '12 Dec 2022',
-			'pg': 'PG-13',
-			'isUpcomingMovie': false,
-			'isTrendingMovie': false,
-		},
-		{
-			'id': 8,
-			'image': SpiderFarFromHomeMovieImage,
-			'name': 'Spiderman: Far From Home',
-			'alt': 'spiderman-far-from-home',
-			'genre': 'Action',
-			'releaseDate': '12 Dec 2022',
-			'pg': 'PG-13',
-			'isUpcomingMovie': false,
-			'isTrendingMovie': true,
-		},
-		{
-			'id': 9,
-			'image': SpiderFarFromHomeMovieImage,
-			'name': 'Spiderman: Far From Home',
-			'alt': 'spiderman-far-from-home',
-			'genre': 'Action',
-			'releaseDate': '12 Dec 2022',
-			'pg': 'PG-13',
-			'isUpcomingMovie': false,
-			'isTrendingMovie': false,
-		},
-		{
-			'id': 10,
-			'image': SpiderFarFromHomeMovieImage,
-			'name': 'Spiderman: Far From Home',
-			'alt': 'spiderman-far-from-home',
-			'genre': 'Action',
-			'releaseDate': '12 Dec 2022',
-			'pg': 'PG-13',
-			'isUpcomingMovie': false,
-			'isTrendingMovie': false,
-		},
-		{
-			'id': 11,
-			'image': SpiderFarFromHomeMovieImage,
-			'name': 'Spiderman: Far From Home',
-			'alt': 'spiderman-far-from-home',
-			'genre': 'Action',
-			'releaseDate': '12 Dec 2022',
-			'pg': 'PG-13',
-			'isUpcomingMovie': true,
-			'isTrendingMovie': true,
-		},
-		{
-			'id': 12,
-			'image': SpiderFarFromHomeMovieImage,
-			'name': 'Spiderman: Far From Home',
-			'alt': 'spiderman-far-from-home',
-			'genre': 'Action',
-			'releaseDate': '12 Dec 2022',
-			'pg': 'PG-13',
-			'isUpcomingMovie': false,
-			'isTrendingMovie': false,
-		},
-		{
-			'id': 13,
-			'image': SpiderFarFromHomeMovieImage,
-			'name': 'Spiderman: Far From Home',
-			'alt': 'spiderman-far-from-home',
-			'genre': 'Action',
-			'releaseDate': '12 Dec 2022',
-			'pg': 'PG-13',
-			'isUpcomingMovie': false,
-			'isTrendingMovie': true,
-		},
-	];
+export const getMoviesData = async ( perPage: number|null = null, page: number|null = null, orderBy: string|null = null, order: string|null = null, label: string|null = null ) => {
+	let url: string = 'https://amaan-movie-library-headless.rt.gw/wp-json/movie-library/v1/movies?';
+
+	if ( perPage ) {
+		url += `per_page=${perPage}&`;
+	}
+
+	if ( page ) {
+		url += `page=${page}&`;
+	}
+
+	if ( orderBy ) {
+		url += `orderby=${orderBy}&`;
+	}
+
+	if ( order ) {
+		url += `order=${order}&`;
+	}
+
+	if ( label ) {
+		url += `label=${label}`;
+	}
+
+	if ( '&' === url.slice( -1 ) || '?' === url.slice( -1 ) ) {
+		url = url.slice( 0, -1 );
+	}
+
+	const res = await fetch( url, { next: { revalidate: 3600 } } );
+
+	if ( ! res.ok ) {
+		return [];
+	}
+
+	return await res.json();
+}
+
+export const getMovieData = async ( movieID: number ) => {
+	let url: string = `https://amaan-movie-library-headless.rt.gw/wp-json/movie-library/v1/movie/${movieID}`;
+
+	const res = await fetch( url, { next: { revalidate: 3600 } } );
+
+	if ( ! res.ok ) {
+		return false;
+	}
+
+	return await res.json();
 }
