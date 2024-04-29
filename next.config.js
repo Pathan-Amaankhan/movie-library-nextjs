@@ -1,9 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-	output: "standalone",
+	output: "export",
 	images: {
-		domains: [ 'amaan-movie-library-headless.rt.gw' ],
-	}
+		remotePatterns: [
+			{
+				protocol: 'https',
+				hostname: 'amaan-movie-library-headless.rt.gw',
+				pathname: '**',
+			},
+		],
+	},
 }
 
 module.exports = nextConfig
