@@ -11,7 +11,7 @@ import ArrowRightWhite from "@/public/assets/icons/arrow-right-white.svg";
 import AvengerEndGameImage1 from "@/public/assets/images/avenger-end-game-image-1.png";
 import YoutubeVideoPlayer from "@/app/components/misc/youtube-video-player";
 import ProfileIcon from "@/public/assets/icons/profile-icon.png";
-import {getMovieData} from "@/app/movies/utils";
+import {getMovieData, getMoviesData} from "@/app/movies/utils";
 
 interface Props {
 	params: {
@@ -21,7 +21,8 @@ interface Props {
 
 // Return a list of `params` to populate the [id] dynamic segment
 export async function generateStaticParams() {
-	return getMovies().map( ( movie ) => ( {
+    const data = await getMoviesData( -1 );
+	return data?.movies?.map( ( movie: { id: { toString: () => any; }; } ) => ( {
 		id: movie.id.toString(),
 	} ) );
 }
@@ -39,7 +40,7 @@ const SingleMoviePage = async ( { params }: Props ) => {
 	return (
 		<>
 			<section className='max-w-[1200px] mx-auto flex my-9 gap-9'>
-				<Image src={ movieData.image } alt={ movieData.alt ?? '' } width={ 592 } height={ 876 } className='w-1/2' />
+				<Image src={ movieData.thumbnail } unoptimized alt={ movieData.title ?? '' } width={ 592 } height={ 876 } className='w-1/2' />
 				<div className='w-1/2'>
 					<h1 className='my-16'>{ movieData.name }</h1>
 

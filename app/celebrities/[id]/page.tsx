@@ -7,7 +7,7 @@ import ArrowRightWhite from "@/public/assets/icons/arrow-right-white.svg";
 import AvengerEndGameImage1 from "@/public/assets/images/avenger-end-game-image-1.png";
 import YoutubeVideoPlayer from "@/app/components/misc/youtube-video-player";
 import Movie from "@/app/components/movies/movie";
-import {getMovies} from "@/app/movies/utils";
+import {getMoviesData} from "@/app/movies/utils";
 import MovieData from "@/app/components/movies/interface";
 import Link from "next/link";
 
@@ -24,7 +24,7 @@ export async function generateStaticParams() {
 	} ) );
 }
 
-const SingleCelebrityPage = ( { params }: Props ) => {
+const SingleCelebrityPage = async ( { params }: Props ) => {
 
 	const id = parseInt( params.id );
 
@@ -131,7 +131,7 @@ const SingleCelebrityPage = ( { params }: Props ) => {
 			<section className='my-32'>
 				<h3 className='mb-12 border-l-4 border-[#D13223] pl-3' id='popular-movies'>Popular Movies</h3>
 				<div className='grid grid-cols-3 gap-6'>
-					{ getMovies().slice(0,3).map( ( movie: MovieData ) => <Movie movie={movie} key={movie.id}/> ) }
+					{ ( await getMoviesData() )?.movies?.slice(0,3).map( ( movie: MovieData ) => <Movie movie={movie} key={movie.id}/> ) }
 				</div>
 			</section>
 

@@ -2,7 +2,8 @@ import React from 'react';
 import RobertDowneyJR from "@/public/assets/images/robert-downey-jr.png";
 import ChrisEvans from "@/public/assets/images/chris-evans.png";
 import LoadMore from "@/app/movies/[id]/cast-and-crew/LoadMore";
-import {getMovies} from "@/app/movies/utils";
+import {getMoviesData} from "@/app/movies/utils";
+import movie from "@/app/components/movies/movie";
 
 interface Props {
 	params: {
@@ -12,7 +13,8 @@ interface Props {
 
 // Return a list of `params` to populate the [id] dynamic segment
 export async function generateStaticParams() {
-	return getMovies().map( ( movie ) => ( {
+    const data = await getMoviesData( -1 );
+	return data?.movies?.map( ( movie: { id: { toString: () => any; }; } ) => ( {
 		id: movie.id.toString(),
 	} ) );
 }

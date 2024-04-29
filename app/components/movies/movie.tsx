@@ -15,7 +15,7 @@ const Movie = ( { movie }: Props ) => {
 				<div className='px-4 py-6 flex flex-col justify-between'>
 					<div className='flex mb-4 justify-between items-start'>
 						<h4>{movie.title}</h4>
-						<span className='text-white opacity-50'>{ Array.isArray( movie.taxonomies['rt-movie-genre'] ) ? movie.taxonomies["rt-movie-genre"][0].name : '' }</span>
+						<span className='text-white opacity-50 ml-1'>{ Array.isArray( movie.taxonomies['rt-movie-genre'] ) ? movie.taxonomies["rt-movie-genre"][0].name : '' }</span>
 					</div>
 					<div className='flex justify-between text-white opacity-50'>
 						<span>Release: { 'object' === typeof movie.metadata && movie.metadata['rt-movie-meta-basic-release-date'] ? movie.metadata['rt-movie-meta-basic-release-date'][0] : '' }</span>
