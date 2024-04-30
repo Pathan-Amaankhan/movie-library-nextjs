@@ -26,7 +26,7 @@ export const getMoviesData = async ( perPage: number|null = null, page: number|n
 		url = url.slice( 0, -1 );
 	}
 
-	const res = await fetch( url, { cache: 'no-store' } );
+	const res = await fetch( url, { next: { revalidate: 3600 } } );
 
 	if ( ! res.ok ) {
 		return [];
