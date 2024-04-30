@@ -22,6 +22,9 @@ interface Props {
 // Return a list of `params` to populate the [id] dynamic segment
 export async function generateStaticParams() {
     const data = await getMoviesData( -1 );
+    console.log( data?.movies?.map( ( movie: { id: { toString: () => any; }; } ) => ( {
+        id: movie.id.toString(),
+    } ) ) );
 	return data?.movies?.map( ( movie: { id: { toString: () => any; }; } ) => ( {
 		id: movie.id.toString(),
 	} ) );
