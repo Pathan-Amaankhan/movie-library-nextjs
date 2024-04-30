@@ -38,7 +38,7 @@ export const getMoviesData = async ( perPage: number|null = null, page: number|n
 export const getMovieData = async ( movieID: number ) => {
 	let url: string = `https://amaan-movie-library-headless.rt.gw/wp-json/movie-library/v1/movie/${movieID}`;
 
-	const res = await fetch( url, { next: { revalidate: 3600 } } );
+	const res = await fetch( url, { next: { revalidate: 0 } } );
 
 	if ( ! res.ok ) {
 		return false;
